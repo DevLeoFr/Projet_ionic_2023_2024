@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">leo</string>
+    <string name="title_activity_main">leo</string>
+    <string name="package_name">com.leo.app</string>
+    <string name="custom_url_scheme">com.leo.app</string>
+</resources>

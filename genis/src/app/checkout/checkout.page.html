@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button> 
+    </ion-buttons>
+    <ion-title><ion-icon name="cart"></ion-icon>{{fruit.nom}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-item>
+      <ion-avatar>
+        <img src="{{fruit.image}}">
+      </ion-avatar>
+      <span>{{fruit.nom}}</span>
+    </ion-item>
+    <ion-item><p><strong>Description : </strong>{{fruit.description}}</p></ion-item><br>
+    <ion-item><strong>Prix de vente : </strong>{{fruit.prixVente}}</ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      Quantité : <ion-button slot="end" (click)="add_qnt()"><ion-icon name="add"></ion-icon></ion-button> <strong slot="end" >{{qnte}}</strong> <ion-button slot="end"  (click)="reduice_qnt()"><ion-icon name="remove"></ion-icon></ion-button> 
+    </ion-item>
+    <br>
+    <ion-item color="primary">
+      <strong>Montant total : {{total}} fcfa</strong>
+    </ion-item> 
+  </ion-card>
+</ion-content>

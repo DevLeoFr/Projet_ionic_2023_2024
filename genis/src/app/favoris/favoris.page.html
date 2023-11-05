@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Favoris</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="ion-padding">
+  <ion-label><strong>Vos fruits favoris :</strong></ion-label>
+  <ion-item *ngFor="let fruit of favory">
+    <ion-avatar>
+      <img src="{{fruit.image}}">
+    </ion-avatar>
+    <ion-label>{{fruit.nom}}</ion-label>
+  </ion-item>
+</ion-content>

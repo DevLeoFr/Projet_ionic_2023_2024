@@ -1,0 +1,61 @@
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>List categorie</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-item *ngFor="let categorie of categories1" [routerLink]="['cathegory',categorie.nom,categorie.couleur]" color="{{categorie.couleur}}">{{categorie.nom}}</ion-item>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title>List fruits</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-header  id="b" >
+  <ion-toolbar>
+    <ion-button slot="start" color="light"  >
+      <ion-back-button color="{{ color }}"></ion-back-button >
+    </ion-button>
+    <ion-title>{{ name }}</ion-title>
+ </ion-toolbar>
+  <ion-note></ion-note>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let fruit of fruits ">
+      <ion-col size="12" *ngIf="fruit.cathegory===name">
+        <ion-card [routerLink]="['details']" (click)="getFruit(fruit)" >
+          <ion-card-header>
+            <ion-card-title></ion-card-title>
+          </ion-card-header>
+          <ion-card-content >
+           <ion-item> {{ fruit.nom }}</ion-item>
+          </ion-card-content>
+        </ion-card>
+        <ion-button color="{{ color }}" (click)="openActions(fruit)">Actions</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+

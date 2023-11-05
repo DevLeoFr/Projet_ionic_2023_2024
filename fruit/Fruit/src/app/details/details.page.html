@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" color="light">
+      <ion-back-button></ion-back-button>
+    </ion-button>
+    <ion-title>{{ fruit.nom }}</ion-title>
+ </ion-toolbar>
+  <ion-note></ion-note>
+</ion-header>
+
+<ion-content >
+  <ion-header>
+  </ion-header>
+  <ion-card>
+    <ion-item>
+      <img src="{{ fruit.image }}" alt="">
+     </ion-item>
+    <ion-item>Nom:{{ fruit.nom }}</ion-item>
+    <ion-item> Prix de vente:{{ fruit.prix_vente }}</ion-item>
+
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Stock</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">{{ fruit.stock }}</div>
+      </ion-accordion>
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>Prix d'achat</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">{{ fruit.prix_achat}}</div>
+      </ion-accordion>
+      <ion-accordion value="third">
+        <ion-item slot="header" color="light">
+          <ion-label>description</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">{{ fruit.description }}</div>
+      </ion-accordion>
+    </ion-accordion-group>
+    <ion-item color="warning">Cathegorie: {{ fruit.cathegory }}</ion-item>
+  </ion-card>
+  <ion-item>
+    Quantité : <ion-button slot="end" (click)="add_qnt()"><ion-icon name="add"></ion-icon></ion-button> <strong slot="end" >{{qnte}}</strong> <ion-button slot="end"  (click)="reduice_qnt()"><ion-icon name="remove"></ion-icon></ion-button>
+  </ion-item>
+  <br>
+  <ion-item color="primary">
+    <strong>Montant total : {{total}} fcfa</strong>
+  </ion-item>
+</ion-content>
+
+

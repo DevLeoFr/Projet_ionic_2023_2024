@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <div>
+    <img src="assets/logo.png">
+  </div>
+  <ion-card>
+    <ion-item>
+      Total achat : {{totalAchat}} fcfa
+    </ion-item>
+    <ion-item>
+      Total vente : {{totalVente}} fcfa
+    </ion-item>
+  </ion-card>
+  <br>
+  <ion-grid>
+    <ion-label>Liste des categories :</ion-label>
+    <br>
+    <ion-row>
+      <ion-col sizeXs="4" *ngFor="let categorie of categories" >
+          <ion-item [routerLink]="['list', categorie.couleur, categorie.nom]" color="{{categorie.couleur}}">{{categorie.nom}}</ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

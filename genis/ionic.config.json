@@ -1,0 +1,7 @@
+{
+  "name": "genis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

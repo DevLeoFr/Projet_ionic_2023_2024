@@ -1,0 +1,45 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>List categorie</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-item *ngFor="let categorie of categories" [routerLink]="['/accueil/list', categorie.couleur, categorie.nom]" color="{{categorie.couleur}}">{{categorie.nom}}</ion-item>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button> 
+      </ion-buttons>
+      <ion-title>List fruits</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> 
+    <ion-accordion-group>
+      <ng-container *ngFor="let fruit of fruits">
+        <ion-accordion *ngIf="fruit.categorie === categorie">
+          <ion-item slot="header" color="light">
+            <ion-avatar>
+              <img src="{{fruit.image}}">
+            </ion-avatar>
+            <ion-label>{{fruit.nom}}</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ul>
+              <li><strong>Description :</strong> {{fruit.description}}</li>
+              <li><strong>Prix d'achat :</strong> {{fruit.prixAchat}} fcfa</li>
+              <li><strong>En stock :</strong> {{fruit.stock}}</li>
+            </ul>
+            <ion-button (click)="openActions(fruit)">Actions</ion-button>
+          </div>
+        </ion-accordion>
+      </ng-container>
+    </ion-accordion-group>
+  </ion-content>
+</div>
